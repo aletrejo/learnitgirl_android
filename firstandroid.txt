@@ -1,0 +1,70 @@
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+   TextView textView;
+
+   @Override
+   protected void onCreate(Bundle savedInstanceState) {  
+
+       super.onCreate(savedInstanceState);
+
+       setContentView(R.layout.activity_main);
+
+       textView = (TextView) findViewById(R.id.textView);
+
+       Button click = (Button) findViewById(R.id.button);
+
+   }
+
+   public void user_click(View v){
+
+       textView.setText("Button clicked");
+   }
+}
+
+
+
+
+
+
+LAYOUT FILE
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   tools:context="com.example.anubha.learnit_sampleproject.MainActivity">
+
+   <TextView
+       android:layout_width="179dp"           
+       android:layout_height="70dp"          
+       android:text="Hello everyone"     
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.451"
+       tools:layout_editor_absoluteX="97dp"
+       tools:layout_editor_absoluteY="190dp"
+       android:layout_marginEnd="59dp"
+       android:layout_centerVertical="true"
+       android:layout_alignParentEnd="true"
+       android:id="@+id/textView"        
+/>
+
+   <Button
+       android:id="@+id/button"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/textView"
+       android:layout_centerHorizontal="true"
+       android:onClick="user_click"              
+       android:text="CLICK ME" />        
+
+
+</RelativeLayout>
